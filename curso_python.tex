@@ -1,0 +1,299 @@
+%        File: presenta.tex
+%     Created: Mon Sept 16 11:00 AM 2019
+% Last Change: Mon Sept 16 11:00 AM 2019
+%
+%      Author: Carlos Rodríguez
+
+\documentclass[hyperref={pdfpagelabels=false},xcolor=pst,pdf,fragile]{beamer}
+
+
+\providecommand\thispdfpagelabel[1]{}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{subfig}
+%\usepackage[spanish]{babel}
+
+\usetheme{Boadilla}
+\usefonttheme{serif}
+
+\author{
+  Luis, FirstName1
+  \texttt{luis.last1@gmail.com}
+  \and
+  \\Carlos Rodríguez
+  \texttt{carlosrdz.isd@gmail.com}
+}
+\def\Title{Introducción a python}
+
+
+
+\title{\Title}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\section{Comenzando el viaje a al programación}
+\begin{frame}
+    \frametitle{Constantes y variables}
+    \pause
+    \begin{itemize}
+    \item Una constante es un valor que se mantiene fijo durante todo el programa. 
+    Ejemplos: 5, 'a', 38, "www.google.com"
+    \item Una variable es un espacio de almacenamiento en memoria que contiene cierta información, la cuál puede ser modificada durante la ejecución del programa.
+    Ejemplos: variable, a, a5
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tipos de datos}
+    \pause
+    \begin{itemize}
+    \item Entero (integer)
+    \item Flotante (float)
+    \item Número complejo
+    \item Booleano (boolean)
+    \item String
+    \item Lista
+    \item Tupla
+    \item Diccionario
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operadores aritméticos}
+    \pause
+    \begin{itemize}
+    \item + (suma)
+    \item - (resta)
+    \item * (multiplicación)
+    \item / (división)
+    \item (módulo)
+    \item ** (exponente)
+    \item función suelo
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Operadores lógicos}
+    \pause
+    \begin{itemize}
+    \item > (mayor)
+    \item  (menor)
+    \item == (igual a)
+    \item != (diferente de)
+    \item >= (mayor o igual)
+    \item  (menor o igual)
+    \item and (y)
+    \item or (o)
+    \item not (no)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operadores lógicos}
+    \begin{itemize}
+    \item  y
+    \item  o
+    \item ~ not
+    \item y otros...
+    \end{itemize}
+\end{frame}
+
+\section{Aterrizando a python}
+\begin{frame}
+    \frametitle{Hola python!}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Comentarios}
+    \pause
+    \begin{itemize}
+    \item Escribir el hashtag al inicio de la línea
+    \item # Así por ejemplo
+    \item Escribir triple comilla doble al inicio y al final del comentario
+    \item """Este es otro ejemplo de comentarios"""
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+\section{Tipos de datos (otra vez)}
+\begin{frame}
+    \frametitle{Números}
+    \pause
+    \begin{itemize}
+    \item Los dos tipos principales de números en python son los enteros (integers) y reales (floats)
+    \item En cado de no especificar el tipo de número (o de dato) python decide cuál es el más apropiado (a veces se equivoca)
+    \item Integers (int): 2, 5, 4000, -2
+    \item Floats (float): 2.5, 2.9, -3.1
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Texto}
+    \pause
+    \begin{itemize}
+    \item Una variable que almacena texto se llama cadena o string, y para que python las reconozca deben estar en comillas simples o dobles... o triples si necesita varias líneas
+    Ejemplo: "Texto de ejemplo"
+    \item el operador + une dos strings...
+    \end{itemize}
+\end{frame}
+
+\section{Interactuando con el usuario}
+\begin{frame}
+    \frametitle{Print y get}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Texto}
+    \pause
+    \begin{itemize}
+    \item Una variable que almacena texto se llama cadena o string, y para que python las reconozca deben estar en comillas simples o dobles... o triples si necesita varias líneas
+    Ejemplo: "Texto de ejemplo"
+    \end{itemize}
+\end{frame}
+
+\section{Arreglos (colecciones)}
+\begin{frame}
+    \frametitle{Arreglos}
+    \pause
+    \begin{itemize}
+    \item Listas
+    \item Diccionarios
+    \item Conjuntos (sets)
+    \item Tuplas
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Listas}
+    \pause
+    \begin{itemize}
+    \item Listas
+    \item Diccionarios
+    \item Conjuntos (sets)
+    \item Tuplas
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diccionarios}
+    \pause
+    \begin{itemize}
+    \item Listas
+    \item Diccionarios
+    \item Conjuntos (sets)
+    \item Tuplas
+    \end{itemize}
+\end{frame}
+
+\section{Control de flujo y condicionales}
+\begin{frame}
+    \frametitle{Control de flujo y condicionales}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\section{Funciones}
+\begin{frame}
+    \frametitle{Scope}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Llamando una función}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Declaración de funciones}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\section{I/O}
+\begin{frame}
+    \frametitle{Interactuando con el archivo}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Interactuando con la propia computadora}
+    \pause
+    \begin{itemize}
+    \item Decimos hola
+    \end{itemize}
+\end{frame}
+
+\section{Test de cuadrito}
+\begin{frame}[fragile]
+  \frametitle{frame con cuadrito }
+  \begin{itemize}
+	\item esta presentacion tiene un cuadrito
+	\pause
+  \end{itemize}
+
+    \begin{block}{Open Definition} % alertblock, exampleblock
+	  \begin{lstlisting}
+https://www.tutorialspoint.com/python/python_basic_operators.htm
+https://www.tutorialsteacher.com/python/python-comparison-and-logical-operators
+https://www.learnpython.org/es/Hello,%20World!
+https://www.w3schools.com/python/python_lists.asp
+	  \end{lstlisting}
+  \end{block}
+  
+\end{frame}
+
+
+\end{document}
+
+
