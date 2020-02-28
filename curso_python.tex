@@ -60,7 +60,7 @@
     \item Una constante es un valor que se mantiene fijo durante todo el programa. 
     Ejemplos: 5, 'a', 38, "www.google.com"
     \item Una variable es un espacio de almacenamiento en memoria que contiene cierta información, la cuál puede ser modificada durante la ejecución del programa.
-    Ejemplos: variable, a, a5
+    Ejemplos: variable, a, a5 = 32, var = "hola"
     \end{itemize}
 \end{frame}
 
@@ -122,7 +122,8 @@
     \frametitle{Hola python!}
     \pause
     \begin{itemize}
-    \item Decimos hola
+    \item \# En este programa desplegamos un saludo
+    \item print("Hola grupo de python!")
     \end{itemize}
 \end{frame}
 
@@ -130,20 +131,33 @@
     \frametitle{Comentarios}
     \pause
     \begin{itemize}
-    \item Escribir el hashtag al inicio de la línea
+    \item Los comentarios sirven para hacer más entendible el código, tanto para nosotros como para los demás
+    \item Python sabe que es un comentario al escribir el hashtag al inicio de la línea
     \item \# Así por ejemplo
-    \item Escribir triple comilla doble al inicio y al final del comentario
-    \item """Este es otro ejemplo de comentarios"""
+    \item Otra forma de escribir un comentario es con triple comilla doble al inicio y al final del comentario
+    \item """Este es otro ejemplo de 
+    \item comentarios"""
     \end{itemize}
 \end{frame}
 
 \section{Tipos de datos (otra vez)}
 \begin{frame}
+    \frametitle{Especificando a python}
+    \pause
+    \begin{itemize}
+    \item Para que python sepa qué tipo de dato deseamos utilizar, es necesario realizar un "cast" al tipo de dato. En caso de no especificar el tipo de dato que deseamos, python otorgará el que el crea más apropiado a la variable, por ejemplo:
+    \item str(texto)
+    \item int(numero)
+    \item float(texto) \pause \#esto es válido ;)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Números}
     \pause
     \begin{itemize}
     \item Los dos tipos principales de números en python son los enteros (integers) y reales (floats)
-    \item En cado de no especificar el tipo de número (o de dato) python decide cuál es el más apropiado (a veces se equivoca)
+    \item En caso de no especificar el tipo de número (o de dato) python decide cuál es el más apropiado (a veces se equivoca)
     \item Integers (int): 2, 5, 4000, -2
     \item Floats (float): 2.5, 2.9, -3.1
     \end{itemize}
@@ -161,31 +175,26 @@
 
 \section{Interactuando con el usuario}
 \begin{frame}
-    \frametitle{Print y get}
+    \frametitle{input y print}
     \pause
     \begin{itemize}
-    \item Decimos hola
+    \item Para desplegar algún dato de nuestro programa, basta con utilizar el comando print, mientras que para asignar algún valor dado por el usuario a una variable, se utiliza el comando input. Ejemplos:
+    \item print("Desplegando un texto")
+    \item var=input("Ingresa un texto")
+    \item print(var)
     \end{itemize}
 \end{frame}
 
+\section{Tipos de datos (última continuación)}
 \begin{frame}
-    \frametitle{Texto}
+    \frametitle{Arreglos (colecciones)}
     \pause
     \begin{itemize}
-    \item Una variable que almacena texto se llama cadena o string, y para que python las reconozca deben estar en comillas simples o dobles... o triples si necesita varias líneas
-    Ejemplo: "Texto de ejemplo"
-    \end{itemize}
-\end{frame}
-
-\section{Arreglos (colecciones)}
-\begin{frame}
-    \frametitle{Arreglos}
-    \pause
-    \begin{itemize}
-    \item Listas
-    \item Diccionarios
-    \item Conjuntos (sets)
-    \item Tuplas
+    \item Existen 4 tipos de arreglos en python (legacy), los cuáles permiten almacenar varios datos en una sola variable:
+    \item Listas (List): Ordenada e intercambiable. Permite miembros duplicados.
+    \item Tuplas (Tuple): Coleccion ordenada y no intercambiable. Permite miembros duplicados.
+    \item Conjuntos (Set): Desordenada y no indexada. No permite miembros duplicados.
+    \item Diccionarios (Dictionary): Desordenada, intercambiable e indexada. No permite miembros duplicados.
     \end{itemize}
 \end{frame}
 
@@ -193,12 +202,40 @@
     \frametitle{Listas}
     \pause
     \begin{itemize}
-    \item Listas
-    \item Diccionarios
-    \item Conjuntos (sets)
-    \item Tuplas
+    \item La lista es una colección ordenada e intercambiable.
+    \item Para crear una lista en python se escriben sus elementos entre corchetes [a, b, c,"hola"].
+    \item mi\textunderscore lista=["un\textunderscore elemento","otro\textunderscore elemento","tercer\textunderscore elemento", "otro", "otro", "ya", "son", "muchos"]
+    \item print(mi\textunderscore lista)
+    \item Para accesar a una lista, especificamos el número de indexación al que queremos accesar (el primer elemento se indentifica con el número 0).
+    \item print(mi\textunderscore lista[1])
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Listas}
+    \pause
+    \begin{itemize}
+    \item python permite indexamiento negativo... \pause no lo usen )=
+    \item Es posible accesar a una sublista de un rango especificado
+    \item print(mi\textunderscore lista[2:5])
+    \item print(:5)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operaciones de listas}
+    \pause
+    \begin{itemize}
+    \item Las operaciones más habituales de Python son las siguientes:
+    \item lista[i]: Devuelve el elemento que está en la posición i de la lista.
+    \item lista.pop(i): Devuelve el elemento en la posición i de una lista y luego lo borra.
+    \item lista.append(elemento): Añade elemento al final de la lista.
+    \item lista.insert(i, elemento): Inserta elemento en la posición i.
+    \item lista.extend(lista2): Fusiona lista con lista2.
+    \item lista.remove(elemento): Elimina la primera vez que aparece elemento.
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Diccionarios}
