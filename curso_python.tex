@@ -19,8 +19,8 @@
 \usefonttheme{serif}
 
 \author{
-  Luis, FirstName1
-  \texttt{luis.last1@gmail.com}
+  Luis, Gutierrez
+  \texttt{cinema.nightmare@gmail.com}
   \and
   \\Carlos Rodríguez
   \texttt{carlosrdz.isd@gmail.com}
@@ -241,10 +241,55 @@
     \frametitle{Diccionarios}
     \pause
     \begin{itemize}
-    \item Listas
-    \item Diccionarios
-    \item Conjuntos (sets)
-    \item Tuplas
+    \item Un diccionario (tal como los convencionales) es una palabra que tiene asociado "algo", y a diferencia de las listas, los diccionarios no tienen orden.
+    \item Para crear un diccionario se ponen sus elementos entre llaves \{"a":"Almidon","b":"bueno",:\}. se les denomina llaves (keys) a las palabras (a y b) y valores a sus definiciones (Almidon y bueno). No es posible tener dos llaves iguales, aunque si dos valores.
+    \item Ejemplo: 
+    \item diccionario = \{'Piloto 1':'Fernando Alonso', 'Piloto 2':'Kimi Raikkonen', 'Piloto 3':'Felipe Massa'\}
+    \item print(diccionario)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operaciones más comunes de los diccionarios}
+    \pause
+    \begin{itemize}
+    \item diccionario.get(‘key’): Devuelve el valor que corresponde con la key introducida.
+    \item diccionario.pop(‘key’): Devuelve el valor que corresponde con la key introducida, y luego borra la key y el valor.
+    \item diccionario.update(\{‘key’:’valor’\}): Inserta una determinada key o actualiza su valor si ya existiera.
+    \item "key" in diccionario: Devuelve verdadero (True) o falso (False) si la key (no los valores) existe en el diccionario.
+    \item "definicion" in diccionario.values(): Devuelve verdadero (True) o falso (False) si definición existe en el diccionario (no como key).
+    \end{itemize}
+\end{frame}
+
+\section{Conjuntos}
+\begin{frame}
+    \frametitle{Conjuntos}
+    \pause
+    \begin{itemize}
+    \item También existen los conjuntos (sets) aunque son menos utilizados.
+    \item Tal como los diccionarios, se crean usando llaves, pero sus elementos se separan por coma como si se tratara de una lista
+    \item Ejemplo: conjunto = \{'Fernando Alonso', 'Kimi Raikkonen', 'Felipe Massa'\}
+    \item Los sets permiten realizar operacionas matemáticas típicas de conjuntos como unión, intersección, etc.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operaciones más comunes en conjuntos}
+    \pause
+    \begin{itemize}
+    \item  A | B: Unión entre el conjunto A y B (Los elementos del conjunta A y los elementos del conjunto B)
+    \item A \& B: Intersección entre el conjunto A y B (los elementos que están en ambos conjuntos)
+    \item A – B: Diferencia entre el conjunto A y B (los elementos que están en A pero no están en B)
+    \item A\textasciicircum B: Diferencia simétrica entre el conjunto A y B (los elementos que están en A o en B pero no en los dos)
+    \end{itemize}
+\end{frame}
+
+\section{Indentación (sangría) en python}
+\begin{frame}
+    \frametitle{Indentación}
+    \pause
+    \begin{itemize}
+    \item Python considera es sensible a la indentación, por lo que es necesario que  sus líneas de código se encuentren agrupadas con el mismo número de espacios a la izquierda de cada línea. Es recomendado utilizar bloques de cuatro espacios, sin embargo cualquier otra cantidad de espacios (o tabuladores) pueden ser utilizados de igual forma (no se recomienda).
     \end{itemize}
 \end{frame}
 
@@ -253,24 +298,98 @@
     \frametitle{Control de flujo y condicionales}
     \pause
     \begin{itemize}
-    \item Decimos hola
-    \end{itemize}
-\end{frame}
-
-\section{Funciones}
-\begin{frame}
-    \frametitle{Scope}
-    \pause
-    \begin{itemize}
-    \item Decimos hola
+    \item Todo programa con una ligera complejidad necesita "tomar decisiones" en algunas bifurcaciones del problema, donde, dependiendo de alguna condición se realiza una u otra acción.
+    \item Esta bifurcación se lleva a cabo con el comando if (condición principal), con sus opcionales elif (condiciones adicionales, pueden ponerse tantos como sean deseados) y else (el default en caso de no cumplirse ninguno).
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Llamando una función}
+    \frametitle{Ejemplo}
     \pause
     \begin{itemize}
-    \item Decimos hola
+    \item Revisar ejercicio "ifs.py"
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Condiciones en python}
+    \pause
+    \begin{itemize}
+    \item Las condiciones utilizadas con más frecuencia son:
+    \item a == b –\textgreater Indica si a es igual a b
+    \item a \textless b
+    \item a \textgreater b
+    \item not –\textgreater NO: niega la condición que le sigue.
+    \item and –\textgreater Y: junta dos condiciones que tienen que cumplirse las dos
+    \item or –\textgreater O: junta dos condiciones y tienen que cumplirse alguna de las dos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{while en python}
+    \pause
+    \begin{itemize}
+    \item Cuando una tarea debe repetirse hasta que cierta condición se cumpla (no sabemos cuántas veces se repetirá), es recomendado utilizar el comando while, que se usa de la siguiente forma:
+    \item vuelta=1
+    \item while vuelta \textless 10:
+    \item \quad \quad \quad print("vuelta "+str(vuelta))
+    \item \quad \quad \quad vuelta=vuelta+1
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{for en python}
+    \pause
+    \begin{itemize}
+    \item En ocasiones necesitamos repetir varias veces una determinada tarea, pero conocemos la cantidad de veces que la repetiremos. Para esto es recomendado utilizar en Python el comando for, que se usa de la siguiente forma:
+    \item for vuelta in range(1,10):
+    \item \quad \quad \quad print("vuelta "+str(vuelta))
+    \item PD. En el caso del for (a diferencia del while) no es posible realizar un loop infinito.
+    \item es posible utilizar el for con cualquier objeto que pueda ser iterado (recorrer sus elementos)
+    \end{itemize}
+\end{frame}
+
+\section{Módulos y Funciones}
+
+\begin{frame}
+    \frametitle{No reinventes la rueda}
+    \pause
+    \begin{itemize}
+    \item Un módulo es un programa que viene en un "paquete" de python y existen para contener rutinas que son utilizadas habitualmente y que no sea necesario reescribirlas cada que son necesitadas. Estos módulos son creados muchas veces por programadores como tu, y se comparten en Github principalmente asi que si hay alguna rutina que uses mucho y no existe ningun paquete que la contenga, es tu oportunidad de brillar ;)
+    \item Gracias a estos módulos es posible realizar cosas complejas en pocas líneas de código
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Instalando un módulo}
+    \pause
+    \begin{itemize}
+    \item Los módulos son instalados de forma distinta en los diversos sistemas operativos, en el caso de Linux, basta con bajar el programa pip y escribir en nuestra línea de comandos "pip install \textless módulo\textgreater " para instalarlo... en algunas distribuciones es incluso más fácil que eso, pero recuerda que internet es tu amigo (internet, google no)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Módulos "legacy" más usados}
+    \pause
+    \begin{itemize}
+    \item os
+    \item datetime
+    \item time
+    \item sys
+    \item locale
+    \item MySQLdb
+    \item Cada uno de estos módulos contiene funciones ya incluídas que pueden ser llamadas si esl módulo se encuentra instalado y cargado.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Invocando funciones de módulos}
+    \pause
+    \begin{itemize}
+    \item Para llamar a una función de un módulo es necesario primero cargar el módulo a nuestro programa, con el comando:
+    \item import modulo
+    \item Posteriormente basta con llamar a la función deseada en la forma:
+    \item modulo.funcion()
     \end{itemize}
 \end{frame}
 
@@ -278,24 +397,96 @@
     \frametitle{Declaración de funciones}
     \pause
     \begin{itemize}
-    \item Decimos hola
-    \end{itemize}
-\end{frame}
-
-\section{I/O}
-\begin{frame}
-    \frametitle{Interactuando con el archivo}
-    \pause
-    \begin{itemize}
-    \item Decimos hola
+    \item Cuando existe alguna rutina que queremos repetir constantemente durante nuestro programa, es útil crear una función, la cuál nos permitirá llamar esta rutina con un solo comando (en lugar de escribir todo). Ejemplo:
+    \item def myfunc(): \#Aquí especificamos el nombre de la función
+    \item \quad \quad \quad x = 300
+    \item \quad \quad \quad print(x)
+    \item myfunc() \#Esto llama a la función
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Interactuando con la propia computadora}
+    \frametitle{Scope}
     \pause
     \begin{itemize}
-    \item Decimos hola
+    \item Una variable se encuentra disponible solamente dentro de la región donde fue creada, y a esto de le denomina "scope" o "alcance".
+    \item Una variable que es creada dentro de una función pertenece solamente al "scope local" de esa función, y solamente podrá ser usada dentro de esa función
+    \item ***Recuerda que la indentación afecta al scope de las variables
+    \end{itemize}
+\end{frame}
+
+\section{Archivos I/O}
+\begin{frame}
+    \frametitle{Interactuando con archivos}
+    \pause
+    \begin{itemize}
+    \item Con Python podemos manipular archivos (leer, escribir...) de una forma bastante sencilla
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Creando archivos de texto}
+    \pause
+    \begin{itemize}
+    \item Para crear un archivo hay que seguir los siguientes pasos:
+    \item Paso 1) Abre un archivo y asignalo a una variable (con la opción "w+")
+    \item Paso 2) Escribimos la informacion que queramos que contenga el archivo
+    \item Paso 3) Cerramos el archivo
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Creando archivos de texto (Ejemplo)}
+    \pause
+    \begin{itemize}
+    \item Paso 1) f=open("archivo.txt", "w+")
+    \item Paso 2) for i in range(10):
+    \item \quad \quad \quad f.write("This is line \%d \textbackslash r \textbackslash n" \% (i+1))
+    \item Paso 3) f.close()
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Escribir datos sobre un archivo}
+    \pause
+    \begin{itemize}
+    \item Para escribir sobre un archivo hay que seguir los siguientes pasos:
+    \item Paso 1) Abre un archivo y asignalo a una variable (con la opción "a+")
+    \item Paso 2) Escribe lo que desees con el comando \textless variable \textgreater.write("texto")
+    \item Paso 3) Cerramos el archivo
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Escribir datos sobre un archivo (Ejemplo)}
+    \pause
+    \begin{itemize}
+    \item Paso 1) f=open("archivo.txt", "a+")
+    \item Paso 2) for i in range(2):
+    \item \quad \quad \quad f.write("Appended line \%d \textbackslash r \textbackslash n" \% (i+1))
+    \item Paso 3) f.close()
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Leer un archivo}
+    \pause
+    \begin{itemize}
+    \item Para Leer un archivo hay que seguir los siguientes pasos:
+    \item Paso 1) Abre un archivo y asignalo a una variable (con la opción "r+")
+    \item Paso 2) Leemos la información deseada con el comando \textless variable \textgreater .read()... y es probable que quieras almacenarla en alguna variable
+    \item Paso 3) Cerramos el archivo
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Leer un archivo (Ejemplo)}
+    \pause
+    \begin{itemize}
+    \item Paso 1) f=open("archivo.txt", "r")
+    \item Paso x) if f.mode == 'r': \#esto es opcional, pero recomendado
+    \item Paso 2) contents =f.read()
+    \item Paso 3) f.close()
     \end{itemize}
 \end{frame}
 
@@ -303,16 +494,18 @@
 \begin{frame}[fragile]
   \frametitle{frame con cuadrito }
   \begin{itemize}
-	\item esta presentacion tiene un cuadrito
+	\item (=
 	\pause
   \end{itemize}
 
-    \begin{block}{Open Definition} % alertblock, exampleblock
+    \begin{block}{Bibliografías} % alertblock, exampleblock
 	  \begin{lstlisting}
 https://www.tutorialspoint.com/python/python_basic_operators.htm
 https://www.tutorialsteacher.com/python/python-comparison-and-logical-operators
 https://www.learnpython.org/es/Hello,%20World!
 https://www.w3schools.com/python/python_lists.asp
+https://www.guru99.com/reading-and-writing-files-in-python.html
+https://www.tutorialpython.com/modulos-python/
 	  \end{lstlisting}
   \end{block}
   
