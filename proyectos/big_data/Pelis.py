@@ -30,7 +30,7 @@ tags = 	['War',
 		 'Musical']
 sensitive_tags = ['War', 'Horror', 'Crime']
 tags_val = [1 if tag != '(no genres listed)' else 0 for tag in tags]
-tags_val = [tval+2 if tag in sensitive_tags else tval for tag, tval in zip(tags,tags_val)]
+#tags_val = [tval+2 if tag in sensitive_tags else tval for tag, tval in zip(tags,tags_val)]
 
 
 # ========================================================
@@ -132,7 +132,7 @@ def kmeans(n_clusters, runs=20, tol=0.001):
 
 	# ==================== FROM JUPYTER ==========================
 	# Leo la tabla de películas
-	movies = pd.read_csv('data/movies/movies.csv')
+	movies = pd.read_csv('data/movies.csv')
 	# Creo una tabla con (0,1) para cada película/categoría
 	pelis, _ = movies.shape
 	tagged_data = []
